@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+    <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/trolley</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.search.autoregister_listeners">false</property>
+    
+    <mapping class="domain.CatMaker"/>
+    <mapping class="domain.CatModel"/>
+    <mapping class="domain.Bus"/>
+    
+    <!--
+    <mapping class="domain.BusChanges"/>
+    <mapping class="domain.CatBort"/>
+    <mapping class="domain.CatBustype"/>
+    <mapping class="domain.CatDepo"/>
+    <mapping class="domain.CatEvent"/>
+    <mapping class="domain.CatObject"/>
+    <mapping class="domain.CatStatus"/>
+    <mapping class="domain.CatVaccess"/>
+    <mapping class="domain.CatVowner"/>
+    <mapping class="domain.CatVtype"/>
+    <mapping class="domain.Event"/>
+    <mapping class="domain.EventObject"/>
+    <mapping class="domain.EventObjectId"/>
+    <mapping class="domain.View"/>
+    <mapping class="domain.ViewObject"/>
+    <mapping class="domain.ViewObjectId"/>
+    -->
+ </session-factory>
+</hibernate-configuration>
