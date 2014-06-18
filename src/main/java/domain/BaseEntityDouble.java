@@ -18,15 +18,13 @@ public class BaseEntityDouble {
 	public Integer id;
 	public String text;
 	
-	//-----Constructors
-	public BaseEntityDouble() {
-	}
-
+	//##### Constructors
+	public BaseEntityDouble() {}
 	public BaseEntityDouble(String text) {
 		this.text = text;
 	}
 	
-	//-----Field "ID"
+	//##### Field "id"
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
@@ -38,7 +36,7 @@ public class BaseEntityDouble {
 		this.id = id;
 	}
    
-	//-----Field "Text"
+	//##### Field "text"
 	@Column(name = "text", nullable = false)
 	public String getText() {
 		return this.text;

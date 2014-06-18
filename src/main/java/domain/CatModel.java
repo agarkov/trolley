@@ -1,4 +1,4 @@
-/**
+/*
  * Mapping table "catmodel" to entity
  */
 
@@ -18,39 +18,38 @@ import java.util.HashSet;
 @Table(name = "catmodel", catalog = "trolley")
 public class CatModel extends BaseEntityTriple {
 
-	private CatMaker catMakers;
-	private Collection<Bus> listOfBuses = new HashSet<Bus>();
+	private CatMaker catMaker;
+	private Collection<Bus> Buses = new HashSet<Bus>();
 
-	//-----Constructors
-	public CatModel() {
-	}
-
-	public CatModel(CatMaker catMakers, String text, String textAlt, Collection<Bus> listOfBuses) {
-		this.catMakers = catMakers;
+	//##### Constructors
+	public CatModel() {}
+	public CatModel(CatMaker catMaker, String text, String textAlt, Collection<Bus> Buses) {
+		this.catMaker = catMaker;
 		this.text = text;
 		this.textAlt = textAlt;
-		//this.listOfBuses = listOfBuses;
+		this.Buses = Buses;
 	}
 
-	//-----Receive "makerID" from "catmaker"
+	//##### Receive records from "catmaker" for ".makerId"
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "makerId", nullable = false)
-	public CatMaker getCatMakers() {
-		return this.catMakers;
+	public CatMaker getCatMaker() {
+		return this.catMaker;
 	}
 
-	public void setCatMakers(CatMaker catMakers) {
-		this.catMakers = catMakers;
+	public void setCatMaker(CatMaker catMaker) {
+		this.catMaker = catMaker;
 	}
 
-	//-----Transmit itself to "bus"
+	//##### Transmit records to "bus.modelId"
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "catModel")
-	public Collection<Bus> getBuses() {
-		return this.listOfBuses;
+	public Collection<Bus> Buses() {
+		return this.Buses;
 	}
 
-	public void setBuses(Collection<Bus> listOfBuses) {
-		this.listOfBuses = listOfBuses;
+	public void setBuses(Collection<Bus> Buses) {
+		this.Buses = Buses;
 	}
 
 }
+

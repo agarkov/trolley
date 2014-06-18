@@ -13,16 +13,14 @@ public class BaseEntityTriple extends BaseEntityDouble{
 
 	public String textAlt;
 	
-	//-----Constructors
-	public BaseEntityTriple() {
-	}
-
+	//##### Constructors
+	public BaseEntityTriple() {}
 	public BaseEntityTriple(String text, String textAlt) {
 		this.text = text;
 		this.textAlt = textAlt;
 	}
 	
-	//-----Field "TextAlt"
+	//##### Field "textAlt"
 	@Column(name = "textAlt")
 	public String getTextAlt() {
 		return this.textAlt;

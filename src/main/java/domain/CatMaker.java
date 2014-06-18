@@ -1,4 +1,4 @@
-/**
+/*
  * Mapping table "catmaker" to entity
  */
 
@@ -16,26 +16,23 @@ import java.util.HashSet;
 @Table(name = "catmaker", catalog = "trolley")
 public class CatMaker extends BaseEntityTriple {
 
-	private Collection<CatModel> listOfCatModels = new HashSet<CatModel>();
+	private Collection<CatModel> catModel = new HashSet<CatModel>();
 
-	//-----Constructors
-	public CatMaker() {
-	}
-
-	public CatMaker(String text, String textAlt, Collection<CatModel> listOfCatModels) {
+	//##### Constructors
+	public CatMaker() {}
+	public CatMaker(String text, String textAlt, Collection<CatModel> catModel) {
 		this.text = text;
 		this.textAlt = textAlt;
-		this.listOfCatModels = listOfCatModels;
+		this.catModel = catModel;
 	}
 
-	//-----Transmit itself to "catmodel"
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "catMakers")
+	//##### Transmit records to "catmodel.makerId"
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "catMaker")
 	public Collection<CatModel> getCatModels() {
-		return this.listOfCatModels;
+		return this.catModel;
 	}
 
-	public void setCatModels(Collection<CatModel> listOfCatModels) {
-		this.listOfCatModels = listOfCatModels;
+	public void setCatModels(Collection<CatModel> catModel) {
+		this.catModel = catModel;
 	}
-
 }
