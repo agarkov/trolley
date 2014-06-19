@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Table(name = "catbort", catalog = "trolley")
 public class CatBort extends BaseEntityDouble {
 
-	private Collection<BusChange> busChange = new HashSet<BusChange>();	
+	private Collection<BusChange> busChange = new HashSet<BusChange>();
 
 	//##### Constructors
 	public CatBort() {}

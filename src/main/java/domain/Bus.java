@@ -106,7 +106,7 @@ public class Bus {
 
 	//##### Field "manY"
 	@Temporal(TemporalType.DATE)
-	@Column(name = "manY", length = 0)
+	@Column(name = "manY")
 	public Date getManY() {
 		return this.manY;
 	}
@@ -127,7 +127,7 @@ public class Bus {
 
 	//##### Field "overY"
 	@Temporal(TemporalType.DATE)
-	@Column(name = "overY", length = 0)
+	@Column(name = "overY")
 	public Date getOverY() {
 		return this.overY;
 	}

@@ -1,6 +1,6 @@
-/**
- * Base class for 2-fielded Entities
- * (fields 'id' & 'text')
+/*
+ * Base class for 2-fielded Entities 
+ *    (fields 'id' & 'text')
  */
 
 package domain;

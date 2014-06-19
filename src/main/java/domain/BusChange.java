@@ -1,5 +1,5 @@
 /*
- * Mapping table "catstatus" to entity
+ * Mapping table "buschange" to entity
  */
 
 package domain;
@@ -20,7 +20,7 @@ public class BusChange {
 
 	private Integer id;
 	private Bus bus;
-	//private Event event;
+	private Event event;
 	private CatDepo catDepo;
 	private CatDepo catDepoMain;
 	private CatBusType catBusType;
@@ -29,10 +29,10 @@ public class BusChange {
 
 	//##### Constructors
 	public BusChange() {}
-	public BusChange(Bus bus, /* Event event, */ CatDepo catDepo,	CatDepo catDepoMain, 
+	public BusChange(Bus bus, Event event, CatDepo catDepo,	CatDepo catDepoMain, 
 					CatBusType catBusType, CatBort catBort,	CatStatus catStatus) {
 		this.bus = bus;
-		//this.event = event;
+		this.event = event;
 		this.catDepo = catDepo;
 		this.catDepoMain = catDepoMain;
 		this.catBusType = catBusType;
@@ -64,15 +64,15 @@ public class BusChange {
 	}
 
 	//##### Receive records from "event" for ".eventId"
-	//@ManyToOne(fetch = FetchType.LAZY)
-	//@JoinColumn(name = "eventId", nullable = false)
-	//public Event getEvent() {
-	//	return this.event;
-	//}
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "eventId", nullable = false)
+	public Event getEvent() {
+		return this.event;
+	}
 
-	//public void setEvent(Event event) {
-	//	this.event = event;
-	//}
+	public void setEvent(Event event) {
+		this.event = event;
+	}
 
 	//##### Receive records from "catbort" for ".bortId"
 	@ManyToOne(fetch = FetchType.LAZY)

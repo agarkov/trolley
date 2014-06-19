@@ -16,17 +16,17 @@
     <mapping class="domain.CatBort"/>
     <mapping class="domain.CatBusType"/>
     <mapping class="domain.CatDepo"/>
+    <mapping class="domain.CatEvent"/>
     <mapping class="domain.CatModel"/>    
     <mapping class="domain.CatMaker"/>
     <mapping class="domain.CatStatus"/>
+    <mapping class="domain.Event"/>
 
     <!--
-    <mapping class="domain.CatEvent"/>
     <mapping class="domain.CatObject"/>
     <mapping class="domain.CatVaccess"/>
     <mapping class="domain.CatVowner"/>
     <mapping class="domain.CatVtype"/>
-    <mapping class="domain.Event"/>
     <mapping class="domain.EventObject"/>
     <mapping class="domain.EventObjectId"/>
     <mapping class="domain.View"/>

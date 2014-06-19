@@ -1,5 +1,5 @@
 /*
- * Mapping table "catbort" to entity
+ * Mapping table "catdepo" to entity
  */
 
 package domain;
