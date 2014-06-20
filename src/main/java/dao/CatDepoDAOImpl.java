@@ -39,7 +39,7 @@ implements CatDepoDAO {
 	}
 
 	String s = "##### Finish...";
-	public String find2(String s) {
+	public void find2() {
 		System.out.println("##### Start Find...");
 		
 		TypedQuery<CatDepo> query = eMgr.createQuery("SELECT c FROM CatDepo c", CatDepo.class);
@@ -47,7 +47,7 @@ implements CatDepoDAO {
 
 		Collection<CatDepo> items = query.getResultList();
 		System.out.println("##### Items " + items);
-		return s;
+
 	}
 
 }

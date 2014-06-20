@@ -5,6 +5,10 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
 import org.hibernate.Session;
 
 import config.HibernateUtil;
@@ -12,9 +16,12 @@ import domain.*;
 import dao.*;
 
 public class App {
-	private CatDepoDAO CD;
-	List<CatDepo> CList = CD.findAll();
-		
+
+	@PersistenceContext
+    public static EntityManager eMgr;
+	
+	static TypedQuery<CatDepo> query; 
+	
 	public static void main(String[] args) 
 	{
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -93,14 +100,49 @@ public class App {
 		newBusChange.setCatStatus(newCatStatus);		
 		session.save(newBusChange);
 */
-		//System.out.println(CatDepoDAOImpl.findAll(depos));
-
-		//Collection<CatDepo> items = new HashSet<CatDepo>();
-
+		//CatDepoDAOImpl cd = new CatDepoDAOImpl();
+		//cd.find2();
 		
-		//CatDepoDAOImpl.findById(1L);		
+		
+		//Collection<CatDepoDAOImpl> result = session.createCriteria(CatDepoDAOImpl.class).list();
+		//System.out.println(result);
+		
+		//App a = new App();
+        //a.findAll();
+        
+        query = eMgr.createQuery("SELECT c FROM CatDepo c", CatDepo.class);
+		System.out.println("##### Query " + query);       
+		
 		session.getTransaction().commit();
 	}
+	
+/*	CatDepoDAO catDepoDAO;
+	public List<CatDepo> catDepoList;
 
+	public void createDepoList(){
+		catDepoList = catDepoDAO.findAll(); 
+	}
+	
+	public List<CatDepo> getCatDepoList() { 
+		return catDepoList; 
+	}
+	
+	public void setCatDepoList(List<CatDepo> catDepoList) { 
+		this.catDepoList = catDepoList; 
+	}
 
+	public CatDepoDAO getCatDepoDAO() { 
+		return catDepoDAO; 
+	}
+	
+	public void setCatDepoDAO(CatDepoDAO catDepoDAO) { 
+		this.catDepoDAO = catDepoDAO; 
+	}
+*/	
+	//private CatDepoDAO CD;
+	//List<CatDepo> CList = CD.findAll();
+	//System.out.println(CatDepoDAOImpl.findAll(depos));
+	//Collection<CatDepo> items = new HashSet<CatDepo>();
+	//CatDepoDAOImpl.findById(1L);		
+	
 }

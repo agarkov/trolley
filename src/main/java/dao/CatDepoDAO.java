@@ -13,5 +13,5 @@ public interface CatDepoDAO //extends BaseDAO<CatDepo>
 {
     
 	public abstract List<CatDepo> findAll();
-	public abstract String find2(String s);	
+	public abstract void find2();	
 }
